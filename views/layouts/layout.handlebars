@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Online No Dues Portal</title>
+	<link rel="stylesheet" href="/css/bootstrap.css" />
+	<link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+	<div class='container'>
+	<div class="header clearfix">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+            <li role="presentation"><a href="/">Home</a></li>
+            {{#if user}}
+              <li role="presentation"><a href="/users/dashboard">Dashboard</a></li>
+              <li role="presentation"><a href="/users/logout">Logout</a></li>
+            {{else}}
+              <li role="presentation"><a href="/users/login">Login</a></li>
+            {{/if}}
+          </ul>
+        </nav>
+        <h3 class="text-muted">Online No Dues Scheduling Portal</h3>
+      </div>
+	{{{body}}}
+</div>
+	  <footer class="footer">
+        <center><p>&copy; 2017 Online No Dues Scheduling Portal</p></center>
+        <center><p>13505 13523 13554 13575 13576</p></center>
+      </footer>
+</body>
+</html>

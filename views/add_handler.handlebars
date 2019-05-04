@@ -1,0 +1,32 @@
+<center><h3>Dashboard Admin<h3></center>
+<div class="header clearfix">
+        <nav>
+          <ul class="nav nav-pills pull-left">
+              <li role="presentation"><a href="/users/dashboard/add_handler">Handlers</a></li>
+              <li role="presentation"><a href="/users/dashboard/add_student">Students</a></li>
+              <li role="presentation"><a href="/users/dashboard/add_institute">Institutes</a></li>
+              <li role="presentation"><a href="/users/dashboard/add_department">Departments</a></li>
+          </ul>
+        </nav>
+      </div>
+
+<h2 class="page-header">Add Handler </h2>
+
+<form  method='post' action='/users/dashboard/add_handler'>
+    <div class='form-group'><input type='text' name='username' class='form-control' placeholder='Username' ></div >
+    <div class='form-group'><input type='text' name='institute_id' class='form-control'  placeholder='Institute Id'></div>
+    <div class='form-group'><input type='password' name='password' class='form-control' placeholder='Password'></div>
+    <input type = 'submit' class="btn btn-default"> 
+</form>
+ 
+<br>
+
+<h2 class="page-header">Dues Handlers</h2> 
+
+<table class='table'><tr>
+    <th>Handler Username</th></tr>
+
+{{#each handlers}}
+    <tr class='info'><td>{{this.username}}</td> </tr>
+{{/each}}
+</table>

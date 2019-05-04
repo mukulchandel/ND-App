@@ -1,0 +1,43 @@
+<center><h3>Dashboard Admin<h3></center>
+<div class="header clearfix">
+        <nav>
+          <ul class="nav nav-pills pull-left">
+              <li role="presentation"><a href="/users/dashboard/add_handler">Handlers</a></li>
+              <li role="presentation"><a href="/users/dashboard/add_student">Students</a></li>
+              <li role="presentation"><a href="/users/dashboard/add_institute">Institutes</a></li>
+              <li role="presentation"><a href="/users/dashboard/add_department">Departments</a></li>
+          </ul>
+        </nav>
+      </div>   
+
+
+<h2 class="page-header"> Add Student </h2>
+
+<form method='post' action='/users/dashboard/add_student'>
+<div class='form-group'>
+   <input type='text' class = 'form-control' name='rollno'  placeholder='Roll Number' >
+    </div> 
+    <div class='form-group'>
+ <input type='text' class = 'form-control' name='name' placeholder='Name' ></div> 
+    
+ <div class='form-group'>    <input type='text'  class = 'form-control' name='institute_id' placeholder='Institute Id' ></div> 
+ <div class='form-group'>   <input type='text' name='department_id' class = 'form-control'  placeholder='Department Id' ></div> 
+ <div class='form-group'>  <input type='text' name='email' class = 'form-control' placeholder='Email'  ></div> 
+    <input type = 'submit' class="btn btn-default">
+    
+</form>
+
+<br>
+
+<h2 class="page-header">Students</h2> 
+
+<table class='table'><tr>
+    <th>Roll No</th>
+    <th>Name</th>
+    <th>Department Id</th>
+    <th>Email</th></tr>
+
+{{#each students}}
+    <tr class='info'>  <td>{{this.rollno}}</td><td>  {{this.name}}</td> <td>{{this.department_id}}</td><td> {{this.email}}</td></tr>
+{{/each}}
+</table>

@@ -1,0 +1,21 @@
+
+
+<form method="post" action="/dues/rollno">
+  <div class="form-group">
+    <label>Enter your roll number to check dues</label>
+    <input type="text" class="form-control" name="rollno" placeholder="Roll Number">
+  </div>
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>
+
+<br>
+
+<h4 class="page-header">Pending Dues (if any)</h4>
+<table class='table'><tr>
+    <th>Roll No</th>
+    <th>Due Center</th>
+    <th>Comments</th></tr>
+{{#each dues}}
+    <tr class='info'><td>{{this.rollno}}</td><td> {{this.handler}}</td> <td>{{this.comments}}</td></tr>
+{{/each}}
+</table>

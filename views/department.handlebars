@@ -1,0 +1,23 @@
+
+
+<form method="post" action="/dues/department">
+  <div class="form-group">
+    <label>Enter department id to check dues</label>
+    <input type="text" class="form-control" name="id" placeholder="Department Id">
+  </div>
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>
+
+<br>
+
+<h4 class="page-header">Pending Dues (if any)</h4>
+
+<table class='table'><tr>
+    <th>Roll No</th>
+    <th>Dues Department</th>
+    <th>Comments</th></tr>
+
+{{#each dues}}
+    <tr class='info'><td>{{this.rollno}}</td><td> {{this.handler}}</td><td> {{this.comments}}</td></tr>
+{{/each}}
+</table>

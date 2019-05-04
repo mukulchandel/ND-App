@@ -1,0 +1,34 @@
+<center><h3>Dashboard Handler<h3></center>
+<div class="header clearfix">
+        <nav>
+          <ul class="nav nav-pills pull-left">
+              <li role="presentation"><a href="/users/dashboard/add_dues">Add Dues</a></li>
+              <li role="presentation"><a href="/users/dashboard/remove_dues">Remove Dues</a></li>
+          </ul>
+        </nav>
+      </div>
+
+<h2 class="page-header"> Add Dues</h2>
+<form method='post' class='form-inline' action='/users/dashboard/add_dues'>
+    <div class='form-group'><input type='text' name='rollno' class='form-control' placeholder='Roll Number'></div>
+    <div class='form-group'><input type='text' name='department_id' class='form-control' placeholder='Department Id'></div>
+    <div class='form-group'><input type='text' name='comments' class='form-control' placeholder='Comments'></div>
+    <input type = 'submit' class="btn btn-default"> 
+</form>
+ 
+<br>
+
+<h2 class="page-header">Pending Dues</h2>
+
+<table class='table'><tr>
+    <th>Roll No</th>
+    <th>Dues/Comments</th></tr>
+
+{{#each dues}}
+    <tr class='info'>
+        <td>{{this.rollno}}</td>
+        <td>{{this.comments}}</td>
+    </tr>
+{{/each}}
+</table>
+
